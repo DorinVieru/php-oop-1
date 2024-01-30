@@ -11,6 +11,7 @@ class Movie
     public $duration;
     public $original_language;
 
+    // FUNCTION CONSTRUCT
     function __construct($_name, $_genre, $_regista, $_year, $_duration)
     {
         $this->name = $_name;
@@ -18,6 +19,17 @@ class Movie
         $this->regista = $_regista;
         $this->year = $_year;
         $this->duration = $_duration;
+    }
+
+    // FUNZIONI PER MOSTRARE UNA FRASE A SCHERMO
+    public function filmConsigliato()
+    {
+        return $this->name . " <span class='badge bg-success'>Da non perdere</span>";
+    }
+
+    public function filmRivedere()
+    {
+        return $this->name . " <span class='badge bg-warning'>Da rivedere</span>";
     }
 }
 
@@ -74,9 +86,10 @@ $movie_3->original_language = "Italiano";
             <div class="col-12 pb-4">
                 <h1 class="text-center text-primary">The Best Movie Ever You Seen</h1>
             </div>
+            <!-- MOVIE 1 -->
             <div class="col-4">
                 <ul class="list-group">
-                    <li class="list-group-item fw-bold">Titolo: <?php echo $movie_1->name ?></li>
+                    <li class="list-group-item fw-bold">Titolo: <?php echo $movie_1->filmConsigliato(); ?></li>
                     <li class="list-group-item">Genere: <?php echo $movie_1->genre ?></li>
                     <li class="list-group-item">Anno di uscita: <?php echo $movie_1->year ?></li>
                     <li class="list-group-item">Lingua originale: <?php echo $movie_1->original_language ?></li>
@@ -85,6 +98,7 @@ $movie_3->original_language = "Italiano";
                     <li class="list-group-item">Attore principale: <?php echo $movie_1->princ_actor ?></li>
                 </ul>
             </div>
+            <!-- MOVIE 2 -->
             <div class="col-4">
                 <ul class="list-group">
                     <li class="list-group-item fw-bold">Titolo: <?php echo $movie_2->name ?></li>
@@ -96,9 +110,10 @@ $movie_3->original_language = "Italiano";
                     <li class="list-group-item">Attore principale: <?php echo $movie_2->princ_actor ?></li>
                 </ul>
             </div>
+            <!-- MOVIE 3 -->
             <div class="col-4">
                 <ul class="list-group">
-                    <li class="list-group-item fw-bold">Titolo: <?php echo $movie_3->name ?></li>
+                    <li class="list-group-item fw-bold">Titolo: <?php echo $movie_3->filmRivedere(); ?></li>
                     <li class="list-group-item">Genere: <?php echo $movie_3->genre ?></li>
                     <li class="list-group-item">Anno di uscita: <?php echo $movie_3->year ?></li>
                     <li class="list-group-item">Lingua originale: <?php echo $movie_3->original_language ?></li>
