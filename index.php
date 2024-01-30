@@ -1,70 +1,69 @@
 <!-- SEZIONE PHP LOGICA -->
 <?php
-// DEFICNIZIONE DELLA CLASSE MOVIE
-class Movie
-{
-    public $name;
-    public $genre;
-    public $princ_actor;
-    public $regista;
-    public $year;
-    public $duration;
-    public $original_language;
-
-    // FUNCTION CONSTRUCT
-    function __construct($_name, $_genre, $_regista, $_year, $_duration)
+    // DEFICNIZIONE DELLA CLASSE MOVIE
+    class Movie
     {
-        $this->name = $_name;
-        $this->genre = $_genre;
-        $this->regista = $_regista;
-        $this->year = $_year;
-        $this->duration = $_duration;
+        public $name;
+        public $genre;
+        public $princ_actor;
+        public $regista;
+        public $year;
+        public $duration;
+        public $original_language;
+
+        // FUNCTION CONSTRUCT
+        function __construct($_name, $_genre, $_regista, $_year, $_duration)
+        {
+            $this->name = $_name;
+            $this->genre = $_genre;
+            $this->regista = $_regista;
+            $this->year = $_year;
+            $this->duration = $_duration;
+        }
+
+        // FUNZIONI PER MOSTRARE UNA FRASE A SCHERMO
+        public function filmConsigliato()
+        {
+            return $this->name . " <span class='badge bg-success'>Da non perdere</span>";
+        }
+
+        public function filmRivedere()
+        {
+            return $this->name . " <span class='badge bg-warning'>Da rivedere</span>";
+        }
     }
 
-    // FUNZIONI PER MOSTRARE UNA FRASE A SCHERMO
-    public function filmConsigliato()
-    {
-        return $this->name . " <span class='badge bg-success'>Da non perdere</span>";
-    }
+    // CREO ISTANZA PER LA CLASSE MOVIE
+    $movie_1 = new Movie("V per Vendetta", ["Azione, Drammatico, Thriller"], "James McTeigue", 2005, "132 min");
+    $movie_2 = new Movie("La battaglia di Hacksaw Ridge", ["Biografico, Drammatico, Storico, Guerra"], "Mel Gibson", 2016, "131 min");
+    $movie_3 = new Movie("The Place", ["Drammatico, Noir, Fantastico"], "Paolo Genovese", 2017, "105 min");
 
-    public function filmRivedere()
-    {
-        return $this->name . " <span class='badge bg-warning'>Da rivedere</span>";
-    }
-}
+    // ASSEGNO DEI VALORI AGLI ATTRIBUTI DELL'ISTANZA DI MOVIE 1
+    $movie_1->name = "V per Vendetta";
+    $movie_1->genre = "Azione, Drammatico, Thriller";
+    $movie_1->princ_actor = "Hugo Weaving";
+    $movie_1->regista = "James McTeigue";
+    $movie_1->year = 2005;
+    $movie_1->duration = "132 min";
+    $movie_1->original_language = "Inglese";
 
-// CREO ISTANZA PER LA CLASSE MOVIE
-$movie_1 = new Movie("V per Vendetta", "Azione, Drammatico, Thriller", "James McTeigue", 2005, "132 min");
-$movie_2 = new Movie("La battaglia di Hacksaw Ridge", "Biografico, Drammatico, Storico, Guerra", "Mel Gibson", 2016, "131 min");
-$movie_3 = new Movie("The Place", "Drammatico, Noir, Fantastico", "Paolo Genovese", 2017, "105 min");
+    // ASSEGNO DEI VALORI AGLI ATTRIBUTI DELL'ISTANZA DI MOVIE 2
+    $movie_2->name = "La battaglia di Hacksaw Ridge";
+    $movie_2->genre = "Biografico, Drammatico, Storico, Guerra";
+    $movie_2->princ_actor = "Andrew Garfield";
+    $movie_2->regista = "Mel Gibson";
+    $movie_2->year = 2016;
+    $movie_2->duration = "131 min";
+    $movie_2->original_language = "Inglese";
 
-// ASSEGNO DEI VALORI AGLI ATTRIBUTI DELL'ISTANZA DI MOVIE 1
-$movie_1->name = "V per Vendetta";
-$movie_1->genre = "Azione, Drammatico, Thriller";
-$movie_1->princ_actor = "Hugo Weaving";
-$movie_1->regista = "James McTeigue";
-$movie_1->year = 2005;
-$movie_1->duration = "132 min";
-$movie_1->original_language = "Inglese";
-
-// ASSEGNO DEI VALORI AGLI ATTRIBUTI DELL'ISTANZA DI MOVIE 2
-$movie_2->name = "La battaglia di Hacksaw Ridge";
-$movie_2->genre = "Biografico, Drammatico, Storico, Guerra";
-$movie_2->princ_actor = "Andrew Garfield";
-$movie_2->regista = "Mel Gibson";
-$movie_2->year = 2016;
-$movie_2->duration = "131 min";
-$movie_2->original_language = "Inglese";
-
-// ASSEGNO DEI VALORI AGLI ATTRIBUTI DELL'ISTANZA DI MOVIE 3
-$movie_3->name = "The Place";
-$movie_3->genre = "Drammatico, Noir, Fantastico";
-$movie_3->princ_actor = "Valerio Mastandrea";
-$movie_3->regista = "Paolo Genovese";
-$movie_3->year = "2017";
-$movie_3->duration = "105 min";
-$movie_3->original_language = "Italiano";
-
+    // ASSEGNO DEI VALORI AGLI ATTRIBUTI DELL'ISTANZA DI MOVIE 3
+    $movie_3->name = "The Place";
+    $movie_3->genre = "Drammatico, Noir, Fantastico";
+    $movie_3->princ_actor = "Valerio Mastandrea";
+    $movie_3->regista = "Paolo Genovese";
+    $movie_3->year = "2017";
+    $movie_3->duration = "105 min";
+    $movie_3->original_language = "Italiano";
 
 ?>
 
