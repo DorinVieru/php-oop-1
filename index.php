@@ -10,12 +10,21 @@ class Movie
     public $year;
     public $duration;
     public $original_language;
+
+    function __construct($_name, $_genre, $_regista, $_year, $_duration)
+    {
+        $this->name = $_name;
+        $this->genre = $_genre;
+        $this->regista = $_regista;
+        $this->year = $_year;
+        $this->duration = $_duration;
+    }
 }
 
 // CREO ISTANZA PER LA CLASSE MOVIE
-$movie_1 = new Movie();
-$movie_2 = new Movie();
-$movie_3 = new Movie();
+$movie_1 = new Movie("V per Vendetta", "Azione, Drammatico, Thriller", "James McTeigue", 2005, "132 min");
+$movie_2 = new Movie("La battaglia di Hacksaw Ridge", "Biografico, Drammatico, Storico, Guerra", "Mel Gibson", 2016, "131 min");
+$movie_3 = new Movie("The Place", "Drammatico, Noir, Fantastico", "Paolo Genovese", 2017, "105 min");
 
 // ASSEGNO DEI VALORI AGLI ATTRIBUTI DELL'ISTANZA DI MOVIE 1
 $movie_1->name = "V per Vendetta";
